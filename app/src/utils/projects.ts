@@ -3,7 +3,7 @@ export type Project = {
   title: string;
   description: string;
   category: string;
-  author: string;
+  role: string;
   date: string;
   imageUrl: string;
   projectUrl: string;
@@ -11,75 +11,59 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    id: "product-dashboard",
-    title: "Product Dashboard Redesign",
+    id: "ic-lsg-ams",
+    title: "IC-LSG Attendance Management System",
     description:
-      "A responsive analytics dashboard for a SaaS product, focused on clarity and fast decision-making.",
-    category: "Product Design",
-    author: "You",
-    date: "Jan 2025",
-    imageUrl:
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
+      "A student attendance management system to manage DNSC IC students' during school events. Facilitates attendance tracking, reporting, and notifications. Successfully used in multiple school events.",
+    category: "Web Development",
+    role: "Backend Developer",
+    date: "August 2025",
+    imageUrl: `/images/projects/ams.png`,
+    projectUrl: "https://github.com/guestnicko/attendance-management-system",
   },
   {
-    id: "portfolio-site",
-    title: "Creator Portfolio Website",
+    id: "ic-lsg-mobile-app",
+    title: "IC-LSG Mobile App",
     description:
-      "A modern portfolio for a content creator with case studies, blog, and contact funnel.",
-    category: "Web Design",
-    author: "You",
+      "A centralized mobile application designed exclusively for students of the Institute of Computing (IC). The app serves as a platform for accessing organization resources, event updates, and academic news, enhancing the overall student experience.",
+    category: "Mobile App Development",
+    role: "Backend Developer",
+    date: "Dec 2025",
+    imageUrl: "/images/projects/ic-lsg-mobile-app.png",
+    projectUrl: "https://github.com/guestnicko/icsa_mobile_app",
+  },
+  {
+    id: "career-connect",
+    title: "Job Listing Platform",
+    description:
+      "Career Connect, A job listing website connecting job seekers with employers, featuring job postings, search functionality, and application tracking.",
+    category: "Web Development",
+    role: "Author",
     date: "Dec 2024",
-    imageUrl:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
+    imageUrl: "/images/projects/career-connect.png",
+    projectUrl: "https://github.com/guestnicko/career_connect",
   },
   {
-    id: "course-platform",
-    title: "Course Platform UI",
+    id: "campus-tech",
+    title: "Campus Tech: The ICT Journey",
     description:
-      "Interface design for an online course platform with focus on onboarding and progress tracking.",
-    category: "Interface Design",
-    author: "You",
-    date: "Oct 2024",
-    imageUrl:
-      "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
+      "A game that educates players about the skills and knowledge needed of Information and Communication Technology (ICT) Senior Highscool student through interactive gameplay and engaging storytelling.",
+    category: "Game Development",
+    role: "Programmer",
+    date: "Dec 2025",
+    imageUrl: "/images/projects/campus-tech.png",
+    projectUrl:
+      "https://guestnicko.itch.io/campus-tech-the-ict-chronicles?secret=j3FlzqT9Ipb42y3LRBHarGwFuo",
   },
   {
-    id: "marketing-site",
-    title: "Landing Page for a SaaS Tool",
+    id: "terrapinas",
+    title: "TerraPinas: Real Estate Listing Platform",
     description:
-      "Conversion-focused landing page with clear storytelling, pricing, and social proof sections.",
-    category: "Marketing",
-    author: "You",
-    date: "Aug 2024",
-    imageUrl:
-      "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
-  },
-  {
-    id: "design-system",
-    title: "Mini Design System",
-    description:
-      "A reusable component library and documentation for a small product team.",
-    category: "Design Systems",
-    author: "You",
-    date: "Jun 2024",
-    imageUrl:
-      "https://images.pexels.com/photos/1181670/pexels-photo-1181670.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
-  },
-  {
-    id: "podcast-site",
-    title: "Podcast Landing Page",
-    description:
-      "A clean landing page for a podcast with episode highlights and subscription CTAs.",
-    category: "Branding",
-    author: "You",
-    date: "Apr 2024",
-    imageUrl:
-      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    projectUrl: "https://example.com/product-dashboard",
+      "A real estate listing platform connecting buyers, sellers, and renters with property listings, search functionality, and contact options.",
+    category: "Web Development",
+    role: "Author",
+    date: "Jan 2026",
+    imageUrl: "/images/projects/terrapinas.png",
+    projectUrl: "https://github.com/guestnicko/TerraPinas",
   },
 ];
