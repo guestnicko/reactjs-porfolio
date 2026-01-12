@@ -19,8 +19,9 @@ export default function AboutMe() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
     const formData = new FormData(event.target);
-    formData.append("access_key", "4aeec00e-ec84-479e-a460-a4109048cd0a");
+    formData.append("access_key", "8255c584-db91-4da3-b292-cacbf258884a");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -28,7 +29,7 @@ export default function AboutMe() {
     });
 
     const data = await response.json();
-    setResult(data.success ? "Success!" : "Error");
+    setResult(data.success ? "success" : "error");
   };
   return (
     <div
@@ -309,6 +310,64 @@ export default function AboutMe() {
                     Submit
                   </button>
                 </div>
+                {result === "success" && (
+                  <div
+                    className="
+                    flex items-start sm:items-center p-4 mb-4 text-sm text-fg-success-strong rounded-base bg-green-200 my-3 rounded-lg"
+                    role="alert"
+                  >
+                    <svg
+                      className="w-4 h-4 me-2 shrink-0 mt-0.5 sm:mt-0"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p>
+                      <span className="font-medium me-1">Success!</span> You
+                      have successfully sent the mail.{" "}
+                    </p>
+                  </div>
+                )}
+                {result === "error" && (
+                  <div
+                    className="
+                    flex items-start sm:items-center p-4 mb-4 text-sm text-fg-success-strong rounded-base bg-red-200 my-3 rounded-lg"
+                    role="alert"
+                  >
+                    <svg
+                      className="w-4 h-4 me-2 shrink-0 mt-0.5 sm:mt-0"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p>
+                      <span className="font-medium me-1">Error!</span> Something
+                      went wrong.{" "}
+                    </p>
+                  </div>
+                )}
               </form>
             </div>
           </div>
