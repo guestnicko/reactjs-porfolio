@@ -15,6 +15,21 @@ export default function AboutMe() {
     SKILL_CATEGORIES.find((cat) => cat.id === activeSkillTab) ??
     SKILL_CATEGORIES[0];
 
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "4aeec00e-ec84-479e-a460-a4109048cd0a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+  };
   return (
     <div
       className="min-h-screen "
@@ -186,44 +201,115 @@ export default function AboutMe() {
         </section>
 
         {/* Contact */}
-        <section className="space-y-4 border-t border-slate-700/70 pt-8">
-          <h2 className="text-sm uppercase tracking-[0.2em] text-slate-400">
-            Contact Information
-          </h2>{" "}
-          <p className="text-md  max-w-2xl leading-relaxed">
-            If you&apos;d like to talk about a project, collaboration, or just
-            compare notes on design and development, feel free to reach out.
-          </p>
-          <div className="text-md space-y-5 max-w-2xl leading-relaxed">
-            <div>
-              <p className="uppercase text-red-500 tracking-widest">Email</p>
-              <a href="mailto:donenargan@gmail.com" className="">
-                donenargan.gmail.com
-              </a>
+        <section id="contact-info" className="my-4  space-y-4  pt-15 ">
+          <div className="flex sm:flex-col md:flex-row gap-5">
+            <div className="basis-1/2">
+              <div className="text-md space-y-3 max-w-2xl leading-relaxed">
+                <h2 className="text-sm uppercase tracking-[0.2em] text-slate-400">
+                  Contact Information
+                </h2>{" "}
+                <h3 className="text-3xl font-bold">
+                  Get In Touch With Me Through These Channels
+                </h3>
+                <p className="text-md max-w-2xl leading-relaxed">
+                  If you&apos;d like to talk about a project, collaboration, or
+                  just compare notes on design and development, feel free to
+                  reach out.
+                </p>
+                <div>
+                  <p className="uppercase text-red-500 tracking-widest">
+                    Email
+                  </p>
+                  <a href="mailto:donenargan@gmail.com" className="">
+                    donenargan.gmail.com
+                  </a>
+                </div>
+                <div>
+                  <p className="uppercase text-blue-500 tracking-widest">
+                    LinkedIn
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/don-dominick-enargan-791815359/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" "
+                  >
+                    linkedin.com/in/don-dominick-enargan-791815359/
+                  </a>
+                </div>
+                <div>
+                  <p className="uppercase text-slate-900 tracking-widest">
+                    GitHub
+                  </p>
+                  <a
+                    href="https://github.com/guestnicko"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=""
+                  >
+                    github.com/guestnicko
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="uppercase text-blue-500 tracking-widest">
-                LinkedIn
-              </p>
-              <a
-                href="https://www.linkedin.com/in/don-dominick-enargan-791815359/"
-                target="_blank"
-                rel="noreferrer"
-                className=" "
+
+            <div className=" basis-1/2">
+              <form
+                onSubmit={onSubmit}
+                className=" shadow-lg  border-t-orange-100 shadow-orange-300 rounded-3xl p-8"
               >
-                linkedin.com/in/don-dominick-enargan-791815359/
-              </a>
-            </div>
-            <div>
-              <p className="uppercase text-slate-900 tracking-widest">GitHub</p>
-              <a
-                href="https://github.com/guestnicko"
-                target="_blank"
-                rel="noreferrer"
-                className=""
-              >
-                github.com/guestnicko
-              </a>
+                <div className="max-w-md">
+                  <div className="mb-5 w-full">
+                    <label
+                      htmlFor=""
+                      className="block mb-2.5 text-sm font-medium text-heading"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      name="Full Name"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-2 rounded-md border border-slate-700/70 bg-transparent focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <label
+                      htmlFor=""
+                      className="block mb-2.5 text-sm font-medium text-heading"
+                    >
+                      Your Email
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full px-4 py-2 rounded-md border focus:border-amber-500 border-slate-700/70 bg-transparent focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <label
+                      htmlFor=""
+                      className="block mb-2.5 text-sm font-medium text-heading"
+                    >
+                      Message
+                    </label>{" "}
+                    <textarea
+                      name="message"
+                      placeholder="Your Message"
+                      rows={4}
+                      className=" w-full px-4 py-2 rounded-md border focus:border-amber-500 border-slate-700/70 bg-transparent focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors duration"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </section>

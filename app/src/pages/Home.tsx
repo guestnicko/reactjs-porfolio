@@ -84,6 +84,7 @@ export default function HomePage() {
 
             <button
               className={`mt-6 inline-flex w-full lg:w-auto items-center justify-center px-6 py-3 text-sm lg:text-base font-bold rounded-md shadow-md text-white hover:bg-orange-600 bg-orange-500 transition-colors duration-150`}
+              onClick={() => (window.location.href = "./about#contact-info")}
             >
               Contact Me
             </button>
